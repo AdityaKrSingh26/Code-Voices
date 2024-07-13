@@ -1,8 +1,8 @@
 const siteMetadata = {
-    title: 'Next.js Blog With Tailwind CSS and Contentlayer',
-    author: 'CodeBucks',
-    headerTitle: 'Next.js Blog',
-    description: 'A blog created with Next.js, Tailwind.css and contentlayer.',
+    title: 'CodeVoices',
+    author: 'Aditya Kumar Singh',
+    headerTitle: 'Blog',
+    description: 'A blog about web development, programming, and technology.',
     language: 'en-us',
     theme: 'system', // system, dark or light
     siteUrl: 'https://create-blog-with-nextjs.vercel.app', // your website URL
