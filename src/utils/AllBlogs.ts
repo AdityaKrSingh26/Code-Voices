@@ -1,52 +1,58 @@
 const Blogs = [
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "Exploring the World of Web Development",
+        description: "In this post, I delve into the fascinating world of web development, sharing insights and tips for beginners.",
+        tags: ["Web Development", "Programming", "Coding"],
+        url: "/blog/exploring-the-world-of-web-development",
         image: "",
-        isPublished: true
+        isPublished: true,
+        publishedAt: "2024-01-15T00:00:00Z"  // ISO string
     },
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "Top 10 JavaScript Frameworks in 2024",
+        description: "A comprehensive guide to the top JavaScript frameworks you should consider learning in 2024.",
+        tags: ["JavaScript", "Frameworks", "Development"],
+        url: "/blog/top-10-javascript-frameworks-in-2024",
         image: "",
-        isPublished: true
+        isPublished: true,
+        publishedAt: "2024-01-15T00:00:00Z"
     },
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "Understanding Asynchronous Programming",
+        description: "An in-depth look at asynchronous programming, how it works, and why it is important for modern web development.",
+        tags: ["Programming", "Asynchronous", "JavaScript"],
+        url: "/blog/understanding-asynchronous-programming",
         image: "",
-        isPublished: true
+        isPublished: false,
+        publishedAt: "2024-01-15T00:00:00Z"
     },
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "A Day in the Life of a Software Engineer",
+        description: "Ever wondered what a software engineer does all day? Here’s a glimpse into a typical day.",
+        tags: ["Career", "Software Engineering", "Lifestyle"],
+        url: "/blog/a-day-in-the-life-of-a-software-engineer",
         image: "",
-        isPublished: true
+        isPublished: true,
+        publishedAt: "2024-01-15T00:00:00Z"
     },
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "Getting Started with React.js",
+        description: "A beginner's guide to getting started with React.js, including setup, basic concepts, and a simple project.",
+        tags: ["React.js", "JavaScript", "Frontend"],
+        url: "/blog/getting-started-with-react-js",
         image: "",
-        isPublished: true
+        isPublished: false,
+        publishedAt: "2024-01-15T00:00:00Z"
     },
     {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: ["Personal", "Web Development", "App Development"],
-        url: "#",
+        title: "The Future of Mobile App Development",
+        description: "Exploring the trends and technologies shaping the future of mobile app development.",
+        tags: ["Mobile Development", "App Development", "Technology"],
+        url: "/blog/the-future-of-mobile-app-development",
         image: "",
-        isPublished: true
+        isPublished: true,
+        publishedAt: "2024-01-15T00:00:00Z"
     }
-]
+];
 
 export default Blogs;

@@ -29,7 +29,7 @@ const RecentPosts = ({ blogs }: any) => {
     //         image: ImagePath
     //     }
     // ];
-    
+
     return (
         <section className="w-full  mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">
             <div className="w-full flex  justify-between">
@@ -45,7 +45,7 @@ const RecentPosts = ({ blogs }: any) => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-16 mt-16">
-                {sortedBlogs.map((blog, index) => {
+                {sortedBlogs.map((blog: any, index: any) => {
                     return (
                         <article key={index} className="col-span-1 row-span-1 relative">
                             <BlogLayoutThree blog={blog} />

@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ImagePath from "../image.jpg"
 
 const BlogLayoutTwo = ({ blog }: any) => {
 
@@ -14,7 +15,7 @@ const BlogLayoutTwo = ({ blog }: any) => {
                 className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"
             >
                 <Image
-                    src={blog.image}
+                    src={blog.image ? blog.image : ImagePath}
                     alt={blog.title}
                     // width={blog.image.width}
                     // height={blog.image.height}
