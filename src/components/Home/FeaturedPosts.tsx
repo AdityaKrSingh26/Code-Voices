@@ -5,13 +5,14 @@ import ImagePath from "./carlos-muza-hpjSkU2UYSU-unsplash.jpg"
 
 const FeaturedPosts = ({ blogs }: any) => {
 
-    const blog = {
-        title: "Hello Everyoune! Welcome to my blog!",
-        description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-        tags: "Personal",
-        url: "#",
-        image: ImagePath
-    }
+    const blog = blogs[0];
+    // const blog = {
+    //     title: "Hello Everyoune! Welcome to my blog!",
+    //     description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
+    //     tags: "Personal",
+    //     url: "#",
+    //     image: ImagePath
+    // }
 
     return (
         <section className="w-full mt-10 sm:mt-20  md:mt-15 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">

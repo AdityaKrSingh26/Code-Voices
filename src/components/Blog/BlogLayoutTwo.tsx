@@ -15,7 +15,6 @@ const BlogLayoutTwo = ({ blog }: any) => {
             >
                 <Image
                     src={blog.image}
-                    placeholder="blur"
                     alt={blog.title}
                     // width={blog.image.width}
                     // height={blog.image.height}
@@ -28,7 +27,7 @@ const BlogLayoutTwo = ({ blog }: any) => {
             <div className="col-span-12  lg:col-span-8 w-full">
 
                 <span className="inline-block w-full uppercase text-accent dark:text-accentDark font-semibold text-xs sm:text-sm">
-                    {blog.tags}
+                    {blog.tags[0]}
                 </span>
 
                 <Link href={blog.url} className="inline-block my-1">

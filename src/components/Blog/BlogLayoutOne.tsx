@@ -2,6 +2,7 @@ import React from "react";
 import Tag from "../Elements/Tag";
 import Link from "next/link";
 import Image from "next/image";
+import ImagePath from "../image.jpg"
 
 const BlogLayoutOne = ({ blog }: any) => {
     return (
@@ -12,8 +13,7 @@ const BlogLayoutOne = ({ blog }: any) => {
             "
             />
             <Image
-                src={blog.image}
-                placeholder="blur"
+                src={blog.image ? blog.image : ImagePath}
                 alt={blog.title}
                 // width={blog.image.width}
                 // height={blog.image.height}

@@ -2,13 +2,14 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ImagePath from "../image.jpg"
 
 const BlogLayoutThree = ({ blog }: any) => {
     return (
         <div className="group flex flex-col items-center text-dark dark:text-light">
             <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
                 <Image
-                    src={blog.image}
+                    src={blog.image ? blog.image : ImagePath}
                     alt={blog.title}
                     // width={blog.image.width}
                     // height={blog.image.height}
@@ -19,7 +20,7 @@ const BlogLayoutThree = ({ blog }: any) => {
 
             <div className="flex flex-col w-full mt-4">
                 <span className="uppercase text-accent dark:text-accentDark font-semibold text-xs sm:text-sm">
-                    {blog.tags }
+                    {blog.tags[0]}
                 </span>
                 <Link href={blog.url} className="inline-block my-1">
                     <h2 className="font-semibold capitalize  text-base sm:text-lg">

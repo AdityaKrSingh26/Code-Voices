@@ -4,28 +4,32 @@ import BlogLayoutThree from "../Blog/BlogLayoutThree";
 import ImagePath from "./carlos-muza-hpjSkU2UYSU-unsplash.jpg"
 
 const RecentPosts = ({ blogs }: any) => {
-    const sortedBlogs = [
-        {
-            title: "Hello Everyoune! Welcome to my blog!",
-            description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-            tags: "Personal",
-            url: "#",
-            image: ImagePath
-        },
-        {
-            title: "Hello Everyoune! Welcome to my blog!",
-            description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-            tags: "Personal",
-            url: "#",
-            image: ImagePath
-        }, {
-            title: "Hello Everyoune! Welcome to my blog!",
-            description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
-            tags: "Personal",
-            url: "#",
-            image: ImagePath
-        }
-    ];
+
+    const sortedBlogs = blogs.slice(1, 4);
+
+    // const sortedBlogs = [
+    //     {
+    //         title: "Hello Everyoune! Welcome to my blog!",
+    //         description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
+    //         tags: "Personal",
+    //         url: "#",
+    //         image: ImagePath
+    //     },
+    //     {
+    //         title: "Hello Everyoune! Welcome to my blog!",
+    //         description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
+    //         tags: "Personal",
+    //         url: "#",
+    //         image: ImagePath
+    //     }, {
+    //         title: "Hello Everyoune! Welcome to my blog!",
+    //         description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
+    //         tags: "Personal",
+    //         url: "#",
+    //         image: ImagePath
+    //     }
+    // ];
+    
     return (
         <section className="w-full  mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">
             <div className="w-full flex  justify-between">
