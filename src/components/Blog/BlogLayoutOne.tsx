@@ -14,7 +14,8 @@ const BlogLayoutOne = ({ blog }: any) => {
             "
             />
             <Image
-                src={blog.image ? blog.image : ImagePath}
+                // src={blog.image ? blog.image : ImagePath}
+                src={ImagePath}
                 alt={blog.title}
                 // width={blog.image.width}
                 // height={blog.image.height}

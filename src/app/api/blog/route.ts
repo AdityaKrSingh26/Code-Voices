@@ -32,7 +32,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ success: false, message: "Image is required!" }, { status: 400 });
         }
 
-        const imageByteData = await image.arrayBuffer();
+        const imageByteData = await image?.arrayBuffer();
         const buffer = Buffer.from(imageByteData);
         const path = `./public/${timestamp}_${image.name}`;
         await writeFile(path, buffer);
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
         const blogData = {
             title: formData.get("title") as string,
             description: formData.get("description") as string,
-            tags: (formData.get("tags") as string).split(","),
+            tags: (formData.get("tags") as string).trim().split(","),
             url: `/blog/${slug(formData.get("title") as string)}`,
             image: imageUrl,
             isPublished: true,
@@ -53,6 +53,7 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true, message: "Blog created successfully!" });
     } catch (error: any) {
+        console.log(error);
         return NextResponse.json({ success: false, message: error.message }, { status: 500 });
     }
 }
@@ -65,7 +66,7 @@ export async function DELETE(request: Request) {
         if (!id)
             return NextResponse.json({ success: false, message: "ID is required!" }, { status: 400 });
         const blog = await Blog.findByIdAndDelete(id);
-        if (!blog) 
+        if (!blog)
             return NextResponse.json({ success: false, message: "Blog not found!" }, { status: 404 });
         return NextResponse.json({ success: true, message: "Blog deleted successfully!" });
     } catch (error: any) {

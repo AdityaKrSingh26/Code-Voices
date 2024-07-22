@@ -9,7 +9,8 @@ const BlogLayoutThree = ({ blog }: any) => {
         <div className="group flex flex-col items-center text-dark dark:text-light">
             <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
                 <Image
-                    src={blog.image ? blog.image : ImagePath}
+                    src={ImagePath}
+                    // src={blog.image ? blog.image : ImagePath}
                     alt={blog.title}
                     // width={blog.image.width}
                     // height={blog.image.height}

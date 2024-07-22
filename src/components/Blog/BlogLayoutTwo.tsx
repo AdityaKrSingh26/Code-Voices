@@ -15,7 +15,8 @@ const BlogLayoutTwo = ({ blog }: any) => {
                 className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"
             >
                 <Image
-                    src={blog.image ? blog.image : ImagePath}
+                    // src={blog.image ? blog.image : ImagePath}
+                    src={ImagePath}
                     alt={blog.title}
                     // width={blog.image.width}
                     // height={blog.image.height}

@@ -1,15 +1,26 @@
-import allBlogs from "@/utils/AllBlogs";
+import fetchBlogs from "@/utils/FetchAllBlog";
 import BlogLayoutThree from "@/components/Blog/BlogLayoutThree";
 import Categories from "@/components/Blog/Categories";
 import GithubSlugger, { slug } from "github-slugger";
 
+// Define types for params
+interface Params {
+    slug: string;
+}
+
+// Define the props type for CategoryPage
+interface CategoryPageProps {
+    params: Params;
+}
+
 const slugger = new GithubSlugger();
 
 export async function generateStaticParams() {
-    const categories: any = [];
+    const allBlogs = await fetchBlogs();
+    const categories = [] as string[];
     const paths = [{ slug: "all" }];
 
-    allBlogs.map((blog) => {
+    allBlogs?.map((blog) => {
         if (blog.isPublished) {
             blog.tags.map((tag) => {
                 let slugified = slugger.slug(tag);
@@ -24,18 +35,19 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params }: { params: Params }) {
     return {
-        title: `${params.slug.replaceAll("-", " ")} Blogs`,
-        description: `Learn more about ${params.slug === "all" ? "web development" : params.slug} through our collection of expert blogs and tutorials`,
+        title: `${params.slug.replace(/-/g, " ")} Blogs`,
+        description: `Learn more about ${params.slug === "all" ? "web development" : params.slug
+            } through our collection of expert blogs and tutorials`,
     };
 }
 
+const CategoryPage = async ({ params }: CategoryPageProps) => {
+    const allBlogs = await fetchBlogs();
 
-const CategoryPage = ({ params }: any) => {
-    // Separating logic to create list of categories from all blogs
     const allCategories = ["all"]; // Initialize with 'all' category
-    allBlogs.forEach(blog => {
+    allBlogs?.forEach(blog => {
         blog.tags.forEach(tag => {
             const slugified = slug(tag);
             if (!allCategories.includes(slugified)) {
@@ -44,35 +56,31 @@ const CategoryPage = ({ params }: any) => {
         });
     });
 
-    // Sort allCategories to ensure they are in alphabetical order
     allCategories.sort();
+    console.log(allCategories);
 
-    // Step 2: Filter blogs based on the current category (params.slug)
-    const blogs = allBlogs.filter(blog => {
+    const blogs = allBlogs?.filter(blog => {
         if (params.slug === "all") {
             return true; // Include all blogs if 'all' category is selected
         }
         return blog.tags.some(tag => slug(tag) === params.slug);
     });
 
+
     return (
         <article className="mt-12 flex flex-col text-dark dark:text-light">
-
-            <div className=" px-5 sm:px-10  md:px-24  sxl:px-32 flex flex-col">
-
+            <div className="px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col">
                 <h1 className="mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl">
-                    #{params.slug}
+                    #{params.slug.replace(/-/g, " ")}
                 </h1>
                 <span className="mt-2 inline-block">
                     Discover more categories and expand your knowledge!
                 </span>
-
             </div>
-
             <Categories categories={allCategories} currentSlug={params.slug} />
-
-            <div className="grid  grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 grid-rows-2 gap-16 mt-5 sm:mt-10 md:mt-24 sxl:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32">
-                {blogs.map((blog, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-5 sm:mt-10 md:mt-24 sxl:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32">
+                {(!blogs || blogs.length === 0) && (<div className="text-white text-center">No blogs found</div>)}
+                {blogs?.map((blog, index) => (
                     <article key={index} className="col-span-1 row-span-1 relative">
                         <BlogLayoutThree blog={blog} />
                     </article>

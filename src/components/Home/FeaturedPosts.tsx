@@ -5,7 +5,9 @@ import ImagePath from "./carlos-muza-hpjSkU2UYSU-unsplash.jpg"
 
 const FeaturedPosts = ({ blogs }: any) => {
 
-    const blog = blogs[0];
+    const blog1 = blogs[1];
+    const blog2 = blogs[2];
+    const blog3 = blogs[3];
     // const blog = {
     //     title: "Hello Everyoune! Welcome to my blog!",
     //     description: "This is a blog where I write about my experiences and thoughts on various topics. I hope you enjoy reading it as much as I enjoy writing it. Feel free to leave a comment or share your thoughts with me. I would love to hear from you!",
@@ -25,19 +27,19 @@ const FeaturedPosts = ({ blogs }: any) => {
 
                 <article className=" col-span-2  sxl:col-span-1 row-span-2 relative">
                     <BlogLayoutOne
-                        blog={blog}
+                        blog={blog1}
                     />
                 </article>
 
                 <article className=" col-span-2 sm:col-span-1 row-span-1 relative">
                     <BlogLayoutTwo
-                        blog={blog}
+                        blog={blog2}
                     />
                 </article>
 
                 <article className="col-span-2 sm:col-span-1 row-span-1 relative">
                     <BlogLayoutTwo
-                        blog={blog}
+                        blog={blog3}
                     />
                 </article>
 

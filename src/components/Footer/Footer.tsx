@@ -22,11 +22,12 @@ const Footer = () => {
                 alert('Email added successfully!');
                 setEmail('');
             } else {
+                setEmail('');
                 alert('Failed to add email!');
             }
             console.log(response.data);
-
         } catch (error) {
+            setEmail('');
             alert('Failed to add email!');
             console.error('Error:', error);
         }
